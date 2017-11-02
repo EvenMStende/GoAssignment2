@@ -19,7 +19,7 @@ const (
 	//POST const to avoid errors
 	POST = "POST"
 	//URL const fpr DB to make it easier
-	URL  = "mongodb://admin:admin@ds133465.mlab.com:33465/assignment2wh"
+	URL = "mongodb://admin:admin@ds133465.mlab.com:33465/assignment2wh"
 )
 
 //WebHookS struct
