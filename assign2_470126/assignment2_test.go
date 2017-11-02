@@ -17,12 +17,12 @@ func Test_HandlerPost(t *testing.T) {
 	temp := WebHookS{"", "www.example.com", "EUR", "NOK", float64(1.5), float64(2.55)}
 	res, err := json.Marshal(&temp)
 	if err != nil {
-		t.Errorf("Could not marshal", err)
+		t.Errorf("Could not marshal: %q", err)
 	}
 
 	post, err := http.Post(test.URL, "application/json", bytes.NewBuffer(res))
 	if err != nil {
-		t.Errorf("Could not post", err)
+		t.Errorf("Could not post: %q", err)
 	}
 	fmt.Println(post)
 }
@@ -38,13 +38,13 @@ func Test_HandlerLate(t *testing.T) {
 
 	res, err := json.Marshal(&temp)
 	if err != nil {
-		t.Errorf("Could not marshal", err)
+		t.Errorf("Could not marshal: %q", err)
 		return
 	}
 
 	post, err := http.Post(test.URL, "application/json", bytes.NewBuffer(res))
 	if err != nil {
-		t.Errorf("Could not post", err)
+		t.Errorf("Could not post: %q", err)
 		return
 	}
 	fmt.Println(post)
@@ -62,13 +62,13 @@ func Test_HandlerAverage(t *testing.T) {
 
 	res, err := json.Marshal(&temp)
 	if err != nil {
-		t.Errorf("Could not marshal", err)
+		t.Errorf("Could not marshal: %q", err)
 		return
 	}
 
 	post, err := http.Post(test.URL, "application/json", bytes.NewBuffer(res))
 	if err != nil {
-		t.Errorf("Could not post", err)
+		t.Errorf("Could not post: %q", err)
 		return
 	}
 	fmt.Println(post)
@@ -80,7 +80,7 @@ func Test_HandlerEva(t *testing.T) {
 
 	get, err := http.Get(test.URL)
 	if err != nil {
-		t.Errorf("Could not get", err)
+		t.Errorf("Could not get: %q", err)
 		return
 	}
 	fmt.Println(get)
